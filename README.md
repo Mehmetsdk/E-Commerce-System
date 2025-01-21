@@ -1,4 +1,3 @@
-
 Building a Modular E-Commerce System with Python and Tkinter
 In today’s world of complex systems and microservices, designing software with modularity in mind is essential. In this blog, we’ll walk through building a simple, modular e-commerce system using Python, Tkinter for the UI, and a custom-built event bus for managing communication between components.
 
@@ -45,7 +44,6 @@ class EventBus:
         if event_type in self.subscribers:
             for handler in self.subscribers[event_type]:
                 handler(data)
-                
 2. Agents: Handling Business Logic
 Each agent focuses on one specific task:
 
@@ -66,7 +64,6 @@ class OrderAgent:
     def create_order(self, order_id, customer):
         print(f"Order {order_id} for {customer} created.")
         self.event_bus.emit("order_created", {"order_id": order_id, "customer": customer})
-        
 The other agents follow a similar pattern. Each one performs its task and communicates the result via the EventBus.
 
 3. MainWindow: The User Interface
@@ -107,7 +104,6 @@ class MainWindow:
 
     def on_order_created(self, data):
         print(f"Order Created: {data['order_id']} for {data['customer']}")
-        
 Running the Application
 The main.py file ties everything together and starts the application:
 
@@ -133,7 +129,6 @@ if __name__ == "__main__":
     root = Tk()
     app = MainWindow(root, event_bus, order_agent, payment_agent, inventory_agent, shipping_agent)
     root.mainloop()
-    
 Benefits of This Architecture
 Scalability: New features or agents can be added without altering existing code.
 Reusability: Each class is self-contained and can be reused in other projects.
@@ -142,5 +137,3 @@ Conclusion
 This project demonstrates how you can design a modular system in Python using an event-driven architecture. While the example is simplified, the principles here can be extended to build more robust and scalable applications.
 
 If you’d like to explore the full code, check out the GitHub repository here (insert link to your repository).
-
-v
