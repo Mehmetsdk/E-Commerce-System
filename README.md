@@ -138,3 +138,4 @@ This project demonstrates how you can design a modular system in Python using an
 
 If you’d like to explore the full code, check out the GitHub repository here (insert link to your repository).
 
+https://medium.com/@mehmetsadikgurler2001/exploring-the-e-commerce-system-project-a-comprehensive-overview-5b76603b26d4
